@@ -1,0 +1,32 @@
+openapi: 3.0.0
+info:
+  version: "1.0.0"
+  title: "Ticket Booking API"
+  description: "This is the backend API project"
+
+tags:
+  - name: Health
+    description: Health check endpoint
+paths:
+  /health:
+    get:
+      tags:
+        - Health
+      summary: "Health check"
+      responses:
+        "200":
+          description: "OK"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "OK"
+
+  # Import external APIs exactly like your provided file
+  $ref:
+    - "./User.yaml"
+    - "./Event.yaml"
+    - "./Ticket.yaml"

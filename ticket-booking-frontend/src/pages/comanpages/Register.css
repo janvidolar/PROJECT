@@ -1,0 +1,133 @@
+.register-wrapper {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 120px;
+
+  /* ✅ Background Image */
+  background-image: url("../../public/im.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+.register-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 32px;
+  border-radius: 20px;
+}
+
+.logo-wrapper {
+  width: 64px;
+  height: 120px;
+  background: #f97316;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+}
+
+.logo-wrapper img {
+  width: 140px;
+}
+
+.register-title {
+  font-size: 40px;
+  font-weight: 900;
+  text-align: center;
+  color: #c8b;
+}
+
+.register-subtitle {
+  font-size:20px;
+  text-align: center;
+  color: #c8b6da;
+  margin-top: 4px;
+}
+
+.register-form {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group label {
+  font-size: 20px;
+  color: #c8b6da;
+  font-weight: 500;
+}
+
+.input-wrapper {
+  position: relative;
+  margin-top: 6px;
+}
+
+.input-wrapper svg {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  color: #9ca3af;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 12px 16px 12px 40px;
+  border-radius: 999px;
+  border: 1px solid #dbd2d1;
+  background: #f3f4f6;
+  outline: none;
+}
+
+.input-wrapper input:focus {
+  border-color: #fb923c;
+  box-shadow: 0 0 0 2px rgba(7, 248, 67, 0.4);
+}
+
+.error-text {
+  font-size: 12px;
+  color: #ef4444;
+  margin-top: 4px;
+}
+
+.submit-btn {
+  margin-top: 8px;
+  padding: 12px;
+  border-radius: 999px;
+  background: #f97316;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.submit-btn:hover {
+  background: #ea580c;
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.login-text {
+  text-align: center;
+  font-size: 14px;
+  color: #6b7280;
+  margin-top: 24px;
+}
+
+.login-text button {
+  background: none;
+  border: none;
+  color: #f97316;
+  font-weight: 500;
+  cursor: pointer;
+  margin-left: 4px;
+}

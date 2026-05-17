@@ -1,0 +1,346 @@
+/* Background setup */
+.login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Theater image background */
+  background: url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Dark overlay to make the form pop */
+.theater-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 23, 42, 0.7); /* Dark blue/black overlay */
+}
+
+.login-container {
+  position: relative;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.15);;
+  padding: 40px;
+  border-radius: 24px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+.login-logo img {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  margin: 0 auto 20px;
+  display: block;
+  object-fit: cover;
+}
+
+.login-title {
+  text-align: center;
+  color: #fcfcfc; /* Deep Indigo */
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.login-subtitle {
+  text-align: center;
+  color: #fdfbfb;
+  margin-bottom: 30px;
+}
+
+/* Dashboard styled role buttons */
+.role-toggle {
+  display: flex;
+  background: #f9f1f1;
+  padding: 4px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+}
+
+.role-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: #8b6464;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.role-btn.active {
+  background: white;
+  color: #7c3aed; /* Dashboard Purple */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Styling */
+.login-form label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #faf9f9;
+  margin-bottom: 8px;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 0 15px;
+  transition: 0.3s;
+}
+
+.input-wrapper:focus-within {
+  border-color: #8b5cf6;
+  background: white;
+}
+
+.input-icon {
+  color: #94a3b8;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: transparent;
+  outline: none;
+  color: #1e293b;
+}
+
+/* New Gradient Button (Matches Dashboard) */
+.login-btn-gradient {
+  width: 100%;
+  margin-top: 25px;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #8b5cf6 0%, #6366f1 100%);
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 10px 15px -3px rgba(139, 92, 246, 0.3);
+  transition: 0.3s;
+}
+
+.login-btn-gradient:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 20px -3px rgba(139, 92, 246, 0.4);
+}
+
+.error-text {
+  color: #ef4444;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.login-footer {
+  text-align: center;
+  margin-top: 25px;/* Main Wrapper with Theater Background */
+.login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+/* Dark Overlay for better contrast */
+.login-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.7); /* Darker overlay for 'aar-par' effect */
+  z-index: 1;
+}
+
+/* Glassmorphism Container */
+.login-container {
+  position: relative;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.12); /* Light transparent white */
+  backdrop-filter: blur(15px); /* Essential for the glass look */
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 40px;
+  border-radius: 24px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.login-logo img {
+  width: 70px;
+  height: 70px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.login-title {
+  color: #ffffff;
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 5px;
+}
+
+.login-subtitle {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+/* Role Toggle - Glassy Style */
+.role-toggle {
+  display: flex;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 5px;
+  border-radius: 14px;
+  margin-bottom: 25px;
+}
+
+.role-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.role-btn.active {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Elements */
+.login-form {
+  text-align: left;
+}
+
+.login-form label {
+  display: block;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 0 15px;
+  margin-bottom: 15px;
+  transition: 0.3s;
+}
+
+.input-wrapper:focus-within {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #8b5cf6;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: transparent;
+  outline: none;
+  color: white;
+}
+
+.input-wrapper input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.input-wrapper svg {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Gradient Button - Matches your 'Book Now' Button */
+.login-btn {
+  width: 100%;
+  margin-top: 20px;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #8b5cf6 0%, #6366f1 100%);
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3);
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.5);
+}
+
+.login-footer {
+  margin-top: 25px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.login-footer button {
+  background: none;
+  border: none;
+  color: #a78bfa;
+  font-weight: 700;
+  cursor: pointer;
+  margin-left: 5px;
+  text-decoration: underline;
+}
+
+.error-text {
+  color: #ff8080;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+  font-size: 14px;
+  color: #64748b;
+}
+
+.login-footer button {
+  background: none;
+  border: none;
+  color: #8b5cf6;
+  font-weight: 700;
+  cursor: pointer;
+  margin-left: 5px;
+}

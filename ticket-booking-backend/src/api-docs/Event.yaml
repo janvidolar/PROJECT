@@ -1,0 +1,201 @@
+tags:
+  - name: Events
+    description: Event management APIs
+
+paths:
+  /events:
+    post:
+      summary: Create a new event
+      tags: [Events]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Event"
+      responses:
+        "201":
+          description: Event created successfully
+        "400":
+          description: Invalid input
+
+  /events/list:
+    post:
+      summary: Get all events
+      tags: [Events]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EventList"
+      responses:
+        "200":
+          description: List of all events
+        "400":
+          description: Invalid input
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+
+  /events/{id}:
+    get:
+      summary: Get event by ID
+      tags: [Events]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: Event ID
+      responses:
+        "200":
+          description: Event details
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Event"
+        "404":
+          description: Event not found
+
+    put:
+      summary: Update event by ID
+      tags: [Events]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: Event ID
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Event"
+      responses:
+        "200":
+          description: Event updated successfully
+        "404":
+          description: Event not found
+
+    delete:
+      summary: Delete event by ID
+      tags: [Events]
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: Event ID
+      responses:
+        "200":
+          description: Event deleted successfully
+        "404":
+          description: Event not found
+
+  /events/filter:
+    post:
+      summary: Events List With Filter
+      tags: [Events]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              required:
+                - filter
+                - sort
+                - page
+              properties:
+                filter:
+                  type: object
+                  example:
+                    {
+                      ids: [1],
+                      statuses:
+                        [
+                          "LAUNCHED",
+                          "CANCELLED",
+                          "CONFIRMED",
+                          "PENDING",
+                        ],
+                      startDate: "2025-11-01",
+                      endDate: "2025-11-10",
+                      inActive: false,
+                      month: 11,
+                      year: 2025,
+                      seach: "conference",
+                    }
+                sort:
+                  type: object
+                  example: { sortBy: "id", orderBy: "ASC" }
+                page:
+                  type: object
+                  example: { pageNumber: 0, pageLimit: 10 }
+      responses:
+        "200":
+          description: Success
+        "404":
+          description: Success
+
+components:
+  schemas:
+    Event:
+      type: object
+      required:
+        - title
+        - description
+        - date
+        - time
+        - capacity
+        - price
+      properties:
+        title:
+          type: string
+          description: Event title
+        description:
+          type: string
+          description: Event description
+        date:
+          type: string
+          format: date-time
+          description: Date and time of the event
+        time:
+          type: string
+          format: time
+          description: Time of the event
+        capacity:
+          type: integer
+          description: Maximum attendees allowed
+        price:
+          type: number
+          format: double
+          description: Price per attendee
+      example:
+        title: Tech Conference 2025
+        description: Annual technology meetup
+        date: 2025-12-10T10:00:00.000Z
+        time: 10:30:00
+        capacity: 100
+        price: 49.99
+
+    EventList:
+      type: object
+      required:
+        - isAdminEvent
+        - isEventPage
+      properties:
+        isAdminEvent:
+          type: boolean
+          description: Event for Admin role
+        isEventPage:
+          type: boolean
+          description: Event for event page
+      example:
+        isAdminEvent: true
+        isEventPage: true

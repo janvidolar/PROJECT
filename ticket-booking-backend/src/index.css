@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+.input-field {
+  @apply w-full mt-1 px-4 py-2.5 rounded-xl border border-gray-200 bg-gray-50 focus:ring-2 focus:ring-orange-300 outline-none;
+}
